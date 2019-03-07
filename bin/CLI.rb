@@ -272,25 +272,37 @@ What would you like to do?
 
 
 
-  #   user_profile = User.find_by(name: user_input) #=> returns User instance
-  #
-  #   if user_profile == nil
-  #     # create a new User row with :name = user_input
-  #     @user = User.create(name: user_input)
-  #
-  #   else
-  #     @user = user_profile
-  #   end
-  #
-  #   self.main_menu#(@user)
-  #   end
+  def self.display_seasons(show_hash)
+    system('clear')
+    puts @menu_message
+    seasons = season_list(show_hash)
+    puts "List of Seasons:"
+    puts "================"
+    puts seasons
+    puts
+    puts "Please enter a season number to view list of episodes"
+    puts "or Enter to go back"
+    user_input = STDIN.gets.chomp
+    if user_input == ""
+      @menu_message = nil
+      display_found_show_details(show_hash)
+    else
+      selection = seasons.select do |season|
+        season.include?(user_input)
+      end
+      if selection.count == 0
+        @menu_message = "Please enter a valid season number"
+        display_seasons(show_hash)
+      else
+        display_episode_list(user_input, show_hash)
+      end
+    end
+  end
 
-## ================ FOR DEVELOPMENT ============= ##
-  # this method is only for development - use it to test the outputs for the
-  # season_list and title_list arrays below
 
 
   def self.display_episode_list(user_input, show_hash)
+    @menu_message = nil
     episode_array = []
     show_hash["episodes"].each do |episode|
       if episode["season"] == user_input.to_i
@@ -312,40 +324,5 @@ What would you like to do?
 
 
 
-  def self.display_seasons(show_hash)
-    system('clear')
-    seasons = season_list(show_hash)
-    puts "List of Seasons:"
-    puts "================"
-    puts seasons
-    puts
-    puts "Please enter a season number to view list of episodes"
-    puts "or Enter to go back"
-    user_input = STDIN.gets.chomp
-    if user_input == ""
-      display_found_show_details(show_hash)
-    else
-      display_episode_list(user_input, show_hash)
-  #  display_found_show_details(show_hash)
-    end
-  end
-
-
-  # creates an array of formatted episode titles - modify to include S01e01 notation??
-  # MARKED FOR DELETION!!
-  def self.title_list(episode_array, season_num)
-    title_array = []
-    episode_array.each do |episode_hash|
-      if episode_hash["season"] == season_num
-        title_array << "#{episode_hash["episode"]}. #{episode_hash["name"]}"
-      end
-    end
-    title_array
-  end
-
-# show_hash["episodes"] <== array of episode hashes
-# new_array = show_hash["episodes"].select do |episode|
-#  episode["season"] = #1
-# end
 
 end
