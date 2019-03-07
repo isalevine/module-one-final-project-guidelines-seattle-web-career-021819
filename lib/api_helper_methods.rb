@@ -191,6 +191,10 @@ def add_playlist_to_table(array, user)
   puts "How many episodes would you like in your playlist?"
   ep_num = STDIN.gets.chomp.to_i
   random_array = array.sample(ep_num)
+  total_runtime = 0
+  random_array.each do |episode|
+    total_runtime += episode["runtime"]
+  end
   episode_array = random_array.map do |episode_hash|
     "#{episode_hash["show_name"]} - S#{episode_hash["season"]}E#{episode_hash["episode"]}. #{episode_hash["name"]}"
   end
@@ -212,18 +216,18 @@ def add_playlist_to_table(array, user)
     )
     i += 1
   end
-  print_new_playlist(episode_array)
+  print_new_playlist(episode_array, total_runtime)
 end
 
 
 
-def print_new_playlist(episode_array)
+def print_new_playlist(episode_array, total_runtime)
   system('clear')
   puts "Playlist created!"
   puts "-----------------"
   puts episode_array
   puts
-  puts "Estimated runtime: "
+  puts "Estimated runtime: #{total_runtime}"
   puts
   puts "Press enter to return to the main menu"
   STDIN.gets.chomp
