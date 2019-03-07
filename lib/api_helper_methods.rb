@@ -250,6 +250,35 @@ def list_all_users(menu)
 end
 
 
+def view_program_statistics
+  num_users = User.count
+  num_playlists = Playlist.group(:playlist_num).count.keys.count
+  num_episodes = Playlist.count
+  num_favorites = Favorite.count
+  num_shows = Favorite.group(:show_id).count.keys.count
+
+  puts "
+  Show Randomizer - Program Statistics
+  ============================================================
+    Number of users created: #{num_users}
+    Number of playlists created: #{num_playlists}
+    Average number of playlists per user: #{(num_playlists.to_f / num_users.to_f).round(10)}
+    ----------------------------------------------------------
+    Number of episodes on all playlists: #{num_episodes}
+    Average number of episodes per playlist: #{(num_episodes.to_f / num_playlists.to_f).round(10)}
+    ----------------------------------------------------------
+    Total number of favorites by all users: #{num_favorites}
+    Total number of unique shows favorited by all users: #{num_shows}
+    ----------------------------------------------------------
+    
+    Press enter to return to main menu.
+    "
+    STDIN.gets.chomp
+    @menu_message = nil
+    CLI.main_menu
+end
+
+
 
 
 ## ========== OPTION 1. FROM SHOW DETAILS (cont.) ========== ##

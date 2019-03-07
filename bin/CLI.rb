@@ -72,6 +72,7 @@ Please select an option below:
 4. Select different user
 5. Print all user names
 6. View your user profile
+7. View program statistics
 
 0. Quit program"
 
@@ -103,6 +104,8 @@ Please select an option below:
       puts
       puts "Profile loading, please wait..."
       user_profile_menu(@user)
+    elsif user_input == "7" || @thesaurus.main_menu_7_words.include?(user_input.downcase)
+      view_program_statistics
     elsif user_input == "0" || @thesaurus.main_menu_0_words.include?(user_input.downcase)
       self.goodbye_message
     else
