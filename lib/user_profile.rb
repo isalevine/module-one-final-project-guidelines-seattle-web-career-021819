@@ -48,10 +48,9 @@ def user_profile_menu(user)
   What would you like to do?
     1. View favorite shows and toggle playlist adding on/off
     2. Remove shows from favorites list
-    3. See additional profile statistics
-    4. Change user name
-    5. Change real name
-    6. Return to main menu
+    3. Change user name
+    4. Change real name
+    5. Return to main menu
 
     0. Quit program
     "
@@ -66,17 +65,12 @@ def user_profile_menu(user)
     # "main_menu" argument is a workaround to load show-removing menu
 
   elsif user_input == "3" || thesaurus.profile_menu_3_words.include?(user_input.downcase)
-    # view additional statistics:
-      # list of Show start dates, + most frequent years?
-      # others??
-
-  elsif user_input == "4" || thesaurus.profile_menu_4_words.include?(user_input.downcase)
     change_user_name_menu(user)
 
-  elsif user_input == "5" || thesaurus.profile_menu_5_words.include?(user_input.downcase)
+  elsif user_input == "4" || thesaurus.profile_menu_4_words.include?(user_input.downcase)
     change_real_name_menu(user)
 
-  elsif user_input == "6" || thesaurus.profile_menu_6_words.include?(user_input.downcase)
+  elsif user_input == "5" || thesaurus.profile_menu_5_words.include?(user_input.downcase)
     CLI.main_menu
 
   elsif user_input == "0" || thesaurus.profile_menu_0_words.include?(user_input.downcase)

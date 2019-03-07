@@ -7,6 +7,7 @@ class Thesaurus
   :main_menu_4_words,
   :main_menu_5_words,
   :main_menu_6_words,
+  :main_menu_7_words,
   :main_menu_0_words,
 
   :display_menu_1_words,
@@ -20,7 +21,6 @@ class Thesaurus
   :profile_menu_3_words,
   :profile_menu_4_words,
   :profile_menu_5_words,
-  :profile_menu_6_words,
   :profile_menu_0_words
 
   def initialize
@@ -44,7 +44,8 @@ class Thesaurus
     off_syn = ["o", "of", "off"]
     playlist_syn = ["p", "pl", "play", "playl", "playlist"]
     print_syn = ["p", "pr", "print"]
-    profile_syn = ["p", "pr", "pro", "profile", "profiles"]
+    profile_syn = ["p", "pr", "pro", "prof," "profile", "profiles"]
+    program_syn = ["p", "pr", "pro", "prog", "program", "programs"]
     quit_syn = ["q", "qu", "quit", "e", "ex" "exit"] # Quit and Exit will both exit the program completely
     real_syn = ["r", "re", "real"]
     remove_syn = ["r", "re", "rv", "rem", "remove", "removes"]
@@ -58,7 +59,7 @@ class Thesaurus
     title_syn = ["t", "ti", "title", "titles"]
     toggle_syn = ["t", "to", "tog", "toggle", "toggles"]
     user_syn = ["u", "us", "user", "users"]
-    view_syn = ["v", "vi", "view"]
+    view_syn = ["v", "vi", "vie", "view"]
     your_syn = ["y", "yo", "you", "your", "ur"]
 
 
@@ -78,6 +79,8 @@ class Thesaurus
     @main_menu_5_words = print_syn += all_syn += name_syn
 
     @main_menu_6_words = view_syn += your_syn += profile_syn
+
+    @main_menu_7_words = program_syn + statistics_syn
 
     @main_menu_0_words = quit_syn
 
@@ -102,13 +105,11 @@ class Thesaurus
 
     @profile_menu_2_words = remove_syn += from_syn += list_syn
 
-    @profile_menu_3_words = see_syn += additional_syn += profile_syn += statistics_syn
+    @profile_menu_3_words = change_syn += user_syn   # name_syn included with "5. Change real name" below
 
-    @profile_menu_4_words = change_syn += user_syn   # name_syn included with "5. Change real name" below
+    @profile_menu_4_words = real_syn += name_syn
 
-    @profile_menu_5_words = real_syn += name_syn
-
-    @profile_menu_6_words = return_syn += main_syn += menu_syn
+    @profile_menu_5_words = return_syn += main_syn += menu_syn
 
     @profile_menu_0_words = quit_syn
 
