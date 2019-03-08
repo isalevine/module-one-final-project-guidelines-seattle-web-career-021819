@@ -246,7 +246,7 @@ What would you like to do?
       display_seasons(show_hash)
     elsif user_input == "3" || @thesaurus.display_menu_3_words.include?(user_input.downcase)
       self.search_shows_by_title
-    elsif user_input == "4" || @thesaurus.display_menu_4_words.include?(user_input.downcase)
+    elsif user_input == "4" || user_input.strip == "" || @thesaurus.display_menu_4_words.include?(user_input.downcase)
       @menu_message = nil
       self.main_menu
     elsif user_input == "0" || @thesaurus.display_menu_0_words.include?(user_input.downcase)
