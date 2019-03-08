@@ -66,10 +66,26 @@ def print_list_of_favorites(user, menu)
       @menu_message = nil
       CLI.main_menu
     elsif selection.count == 1
-      delete_show_from_favorites(user_input, user)
+      delete_show_from_favorites(user_input, user, menu)
     else
       @menu_message = "Please enter a valid show ID"
       print_list_of_favorites(user, "main_menu")
+    end
+
+  elsif menu == "profile_remove_menu"
+    puts "Press enter to return to profile menu or enter a show ID to remove from favorites"
+    user_input = STDIN.gets.chomp
+    selection = show_array.select do |show|
+      show.include?(user_input)
+    end
+    if user_input.strip == ""
+      @menu_message = nil
+      user_profile_menu(user)
+    elsif selection.count == 1
+      delete_show_from_favorites(user_input, user, menu)
+    else
+      @menu_message = "Please enter a valid show ID"
+      print_list_of_favorites(user, "profile_remove_menu")
     end
 
   elsif menu == "profile_menu"
@@ -115,9 +131,8 @@ end
 
 
 
-def delete_show_from_favorites(user_input, user)
+def delete_show_from_favorites(user_input, user, menu)
   selected_show = Show.find_by(api_id: user_input)
-  menu = "main_menu"
   if selected_show == nil
     @menu_message = "Please enter a valid show ID"
     print_list_of_favorites(user, menu)
@@ -240,6 +255,7 @@ end
 # CLI, #47 - self.user_select (add option to see list of users - will need to check if user_input == "")
 # CLI, #78 - self.main_menu (add option to see list of users)
 def list_all_users(menu)
+  system('clear')
   puts "All users currently in the system:"
   puts "=================================="
   puts User.pluck(:name)
@@ -247,8 +263,9 @@ def list_all_users(menu)
   puts "Press enter to return to main menu."
   STDIN.gets.chomp
   if menu == "user_select_menu"
-    self.user_select
+    self.welcome_message
   elsif menu == "main_menu"
+    @menu_message = nil
     self.main_menu
   end
 end
@@ -274,7 +291,7 @@ def view_program_statistics
     Total number of favorites by all users: #{num_favorites}
     Total number of unique shows favorited by all users: #{num_shows}
     ----------------------------------------------------------
-    
+
     Press enter to return to main menu.
     "
     STDIN.gets.chomp
