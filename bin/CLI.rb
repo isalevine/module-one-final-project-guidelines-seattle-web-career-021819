@@ -179,6 +179,7 @@ Please select an option below:
     user_input = STDIN.gets.chomp
     formatted_list.each do |string|
       if user_input.strip == ""
+        @menu_message = nil
         self.main_menu
       elsif string.include?(user_input)
         url = API_URL + "show-details?q=" + user_input.to_s
