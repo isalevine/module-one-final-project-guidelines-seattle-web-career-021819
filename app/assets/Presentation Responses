@@ -17,6 +17,7 @@ Presentation (3 min max)
 
   -Present any code you would like to highlight.
     -USER_INPUT_THESAURUS.RB!!!!!!
-    OR
     -our insane 100-line method (print_list_of_favorites)
       NO
+    -[CLI.rb Line 147] get_array_of_tv_shows method
+      figured out how to iterate through each page of results
