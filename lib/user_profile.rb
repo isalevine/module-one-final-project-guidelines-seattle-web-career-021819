@@ -70,7 +70,7 @@ def user_profile_menu(user)
   elsif user_input == "4" || thesaurus.profile_menu_4_words.include?(user_input.downcase)
     change_real_name_menu(user)
 
-  elsif user_input == "5" || thesaurus.profile_menu_5_words.include?(user_input.downcase)
+  elsif user_input == "5" || user_input == "" || thesaurus.profile_menu_5_words.include?(user_input.downcase)
     CLI.main_menu
 
   elsif user_input == "0" || thesaurus.profile_menu_0_words.include?(user_input.downcase)
