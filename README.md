@@ -38,6 +38,8 @@ These are the key features and functionality built into the program:
 * View program statistics drawn from all users
 
 ## Demo
+You can see a video demo of our program at the directory below
+app/assets/demo/mod1_project_demo.mov
 
 ## Contributing
 Contributions are welcome in all shapes and forms, especially bug fixes and feature additions.
