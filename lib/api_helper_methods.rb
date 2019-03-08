@@ -76,7 +76,6 @@ def print_list_of_favorites(user, menu)
     puts "Press enter to return to profile menu or enter a show ID to remove from favorites"
     user_input = STDIN.gets.chomp
     puts
-    puts "Loading profile, please wait..."
     selection = show_array.select do |show|
       show.include?(user_input)
     end
