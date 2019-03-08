@@ -39,6 +39,7 @@ These are the key features and functionality built into the program:
 
 ## Demo
 You can see a video demo of our program at the directory below
+
 app/assets/demo/mod1_project_demo.mov
 
 ## Contributing
