@@ -56,9 +56,7 @@ A project by [Isa Levine](https://github.com/isalevine) and [Yutaro Tsuji](https
 
 Welcome Page TV ASCII art taken from: https://www.asciiart.eu/electronics/televisions
 
-Gems Used:
-source "https://rubygems.org"
-
+Gems Used: https://rubygems.org
 * gem "sinatra-activerecord"
 * gem "rest-client"
 * gem "sqlite3"
