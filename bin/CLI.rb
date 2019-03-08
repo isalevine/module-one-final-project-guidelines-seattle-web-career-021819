@@ -97,7 +97,7 @@ Please select an option below:
       fetch_episodes_for_playlist(@user)
     elsif user_input == "4" || @thesaurus.main_menu_4_words.include?(user_input.downcase)
       @menu_message = nil
-      self.user_select
+      self.welcome_message
     elsif user_input == "5" || @thesaurus.main_menu_5_words.include?(user_input.downcase)
       list_all_users("main_menu")
     elsif user_input == "6" || @thesaurus.main_menu_6_words.include?(user_input.downcase)
