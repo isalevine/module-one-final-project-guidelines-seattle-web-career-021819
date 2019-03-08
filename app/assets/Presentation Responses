@@ -32,3 +32,6 @@ Presentation (3 min max)
       NO
     -[CLI.rb Line 147] get_array_of_tv_shows method
       figured out how to iterate through each page of results
+    -api-helper-methods.rb - see tidy/straightforward methods at top, which
+      get more complicated and convoluted as you go down the list...
+      (see the progression of us building functionality, and getting more elaborate but dense and jumbled)
