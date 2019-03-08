@@ -14,6 +14,27 @@ Data provided by [EpisoDate.com](https://www.episodate.com/)
 * Create the required tables `rake db:migrate`
 * Run the program `rake run`
 
+## Navigating the Program
+The menus in this program are generally navigated by entering a number from the menu presented. However, keywords and abbreviations (and some synonyms!) for many words will also work.
+
+For example, a menu with option "1. Search shows by title" can be selected by entering any of the following: '1', 's', 'se', 'sea', 'sear', 'search', 'h', 'sh', 'show', 'shows', 't', 'ti', or 'title'
+
+(Note: For menus where some keywords or abbreviations overlap, only the first match found in the menu will be executed.)
+
+Many menus also take time to load--please be patient, and do not press Enter again until the menu loads. (This will potentially cause a crash--feedback and proposed fixes are welcome!)
+
+## Features
+These are the key features and functionality built into the program:
+* Search for TV shows by title--searches also return potential matches, which are then selected by ID number
+* Add/remove TV shows to/from your Favorites list
+* Generate playlists of episodes from your Favorites list--episodes are chosen and ordered randomly, and you can specify how many episodes to add!
+* View and update your user profile:
+  * Change your user name
+  * Add your real name (optional)
+  * Toggle on/off which shows from your Favorites list are added to playlists
+  * See statistics on your favorite shows and playlists
+* View program statistics drawn from all users
+
 ### Demo
 
 ### Contributing

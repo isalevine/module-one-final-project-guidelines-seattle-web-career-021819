@@ -50,7 +50,7 @@ class Thesaurus
     real_syn = ["r", "re", "real"]
     remove_syn = ["r", "re", "rv", "rem", "remove", "removes"]
     return_syn = ["r", "re", "ret", "return", "returns"]
-    search_syn = ["s", "se", "search", "find"]
+    search_syn = ["s", "se", "sea", "sear", "search", "find"]
     season_syn = ["s", "se", "sea", "seas", "season", "seasons"]
     see_syn = ["s", "se", "see", "sees"]
     select_syn = ["s", "se", "sel", "select"]
@@ -68,9 +68,9 @@ class Thesaurus
 
 
     # ==== Main Menu ==== #
-    @main_menu_1_words = search_syn += title_syn
+    @main_menu_1_words = search_syn += shows_syn += title_syn
 
-    @main_menu_2_words = shows_syn += current_syn += list_syn += favorite_syn
+    @main_menu_2_words = current_syn += list_syn += favorite_syn
 
     @main_menu_3_words = generate_syn += playlist_syn
 
