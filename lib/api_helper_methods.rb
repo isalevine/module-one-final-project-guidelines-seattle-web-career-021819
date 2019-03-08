@@ -75,6 +75,8 @@ def print_list_of_favorites(user, menu)
   elsif menu == "profile_remove_menu"
     puts "Press enter to return to profile menu or enter a show ID to remove from favorites"
     user_input = STDIN.gets.chomp
+    puts
+    puts "Loading profile, please wait..."
     selection = show_array.select do |show|
       show.include?(user_input)
     end
@@ -206,33 +208,37 @@ def add_playlist_to_table(array, user)
   system('clear')
   puts "How many episodes would you like in your playlist?"
   ep_num = STDIN.gets.chomp.to_i
-  random_array = array.sample(ep_num)
-  total_runtime = 0
-  random_array.each do |episode|
-    total_runtime += episode["runtime"]
-  end
-  episode_array = random_array.map do |episode_hash|
-    "#{episode_hash["show_name"]} - S#{episode_hash["season"]}E#{episode_hash["episode"]}. #{episode_hash["name"]}"
-  end
-  playlist_instances = Playlist.where("user_id = ?", user.id)
-
-  if playlist_instances.count == 0
-    playlist_number = 1
+  if ep_num == 0
+    self.main_menu
   else
-    playlist_number = playlist_instances.group("playlist_num").count.keys.count
-    playlist_number += 1
+    random_array = array.sample(ep_num)
+    total_runtime = 0
+    random_array.each do |episode|
+      total_runtime += episode["runtime"]
+    end
+    episode_array = random_array.map do |episode_hash|
+      "#{episode_hash["show_name"]} - S#{episode_hash["season"]}E#{episode_hash["episode"]}. #{episode_hash["name"]}"
+    end
+    playlist_instances = Playlist.where("user_id = ?", user.id)
 
+    if playlist_instances.count == 0
+      playlist_number = 1
+    else
+      playlist_number = playlist_instances.group("playlist_num").count.keys.count
+      playlist_number += 1
+
+    end
+    i = 1
+    episode_array.each do |episode|
+      Playlist.create(user_id: user.id,
+        playlist_num: playlist_number,
+        ep_order: i,
+        ep_desc: episode
+      )
+      i += 1
+    end
+    print_new_playlist(episode_array, total_runtime)
   end
-  i = 1
-  episode_array.each do |episode|
-    Playlist.create(user_id: user.id,
-      playlist_num: playlist_number,
-      ep_order: i,
-      ep_desc: episode
-    )
-    i += 1
-  end
-  print_new_playlist(episode_array, total_runtime)
 end
 
 

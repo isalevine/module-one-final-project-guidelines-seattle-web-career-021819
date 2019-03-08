@@ -133,10 +133,14 @@ Please select an option below:
     system('clear')
     puts "Enter show title to search:"
     @title_search = STDIN.gets.chomp
-    url = API_URL + "search?q=" + @title_search
-    url.gsub!(" ", "%20")
-    json = get_json(url) #=> receive Hash of search-result
-    self.get_array_of_tv_shows(json)
+    if @title_search.strip == ""
+      self.main_menu
+    else
+      url = API_URL + "search?q=" + @title_search
+      url.gsub!(" ", "%20")
+      json = get_json(url) #=> receive Hash of search-result
+      self.get_array_of_tv_shows(json)
+    end
   end
 
 
