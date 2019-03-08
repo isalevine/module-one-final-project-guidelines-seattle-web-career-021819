@@ -131,7 +131,7 @@ Please select an option below:
   def self.search_shows_by_title
     system('clear')
     puts @menu_message
-    puts "Enter show title to search:"
+    puts "Enter show title to search \nor hit enter to return to main menu:"
     @title_search = STDIN.gets.chomp
     if @title_search.strip == ""
       @menu_message = nil
@@ -248,6 +248,7 @@ What would you like to do?
       @menu_message = nil
       display_seasons(show_hash)
     elsif user_input == "3" || @thesaurus.display_menu_3_words.include?(user_input.downcase)
+      @menu_message = nil
       self.search_shows_by_title
     elsif user_input == "4" || @thesaurus.display_menu_4_words.include?(user_input.downcase)
       @menu_message = nil
