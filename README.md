@@ -53,3 +53,18 @@ Thank you!
 
 ## Credits
 A project by [Isa Levine](https://github.com/isalevine) and [Yutaro Tsuji](https://github.com/ytsuji27)
+
+Welcome Page TV ASCII art taken from
+https://www.asciiart.eu/electronics/televisions
+
+Gems Used:
+source "https://rubygems.org"
+
+gem "sinatra-activerecord"
+gem "rest-client"
+gem "sqlite3"
+gem "json"
+gem "bundler"
+gem "i18n", "=0.8.1"
+gem "pry"
+gem "require_all"
