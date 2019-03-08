@@ -129,11 +129,12 @@ Please select an option below:
 
 ## ========== OPTION 1. FROM USER MAIN MENU ========== ##
   def self.search_shows_by_title
-    @menu_message = nil
     system('clear')
-    puts "Enter show title to search:"
+    puts @menu_message
+    puts "Enter show title to search \nor hit enter to return to main menu:"
     @title_search = STDIN.gets.chomp
     if @title_search.strip == ""
+      @menu_message = nil
       self.main_menu
     else
       url = API_URL + "search?q=" + @title_search
@@ -148,8 +149,9 @@ Please select an option below:
     all_pages = []
     if json["pages"] == 1
       all_pages = json["tv_shows"]
-
+      @menu_message = nil
     elsif json["pages"] > 1
+      @menu_message = nil
       counter = json["page"]
       counter_max = json["pages"]
       while counter <= counter_max
@@ -161,7 +163,7 @@ Please select an option below:
       all_pages
 
     elsif json["pages"] == 0
-      puts "No results found, please search again."
+      @menu_message = "No results found, please search again."
       self.search_shows_by_title
 
     else
@@ -175,7 +177,7 @@ Please select an option below:
 
 
   def self.select_id_from_results(formatted_list)
-    puts "Please enter the id number for the show you are looking for:"
+    puts "Please enter the id number for the show you are looking for \nor hit enter to return to main menu:"
     user_input = STDIN.gets.chomp
     formatted_list.each do |string|
       if user_input.strip == ""
@@ -220,7 +222,7 @@ Air Date: #{show_hash["start_date"]}
 Network: #{show_hash["network"]}
 Seasons: #{seasons.count}
 
-Description: \n#{show_hash["description"]}".gsub(/<br\s*\/?>/, '').gsub(/<b\s*\/?>/, '').gsub(/\<\/b>/, '').gsub(/<i\s*\/?>/, '').gsub(/\<\/i>/, '')
+Description: \n#{show_hash["description"]}".gsub(/<br\s*\/?>/, '').gsub(/<b\s*\/?>/, '').gsub(/\<\/b>/, '').gsub(/<i\s*\/?>/, '').gsub(/\<\/i>/, '').gsub(/<strong\s*\/?>/, '').gsub(/\<\/strong>/, '')
     # currently only displays first genre (in array)
     # .gsub stuff: Scrub HTML tags from description
     puts
@@ -246,6 +248,7 @@ What would you like to do?
       @menu_message = nil
       display_seasons(show_hash)
     elsif user_input == "3" || @thesaurus.display_menu_3_words.include?(user_input.downcase)
+      @menu_message = nil
       self.search_shows_by_title
     elsif user_input == "4" || user_input.strip == "" || @thesaurus.display_menu_4_words.include?(user_input.downcase)
       @menu_message = nil
