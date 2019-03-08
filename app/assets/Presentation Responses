@@ -1,0 +1,22 @@
+Presentation (3 min max)
+-Your Presentation Should:
+  -Describe something you struggled to build, and show us how you ultimately implemented it in your code.
+    -Option 1?
+      We struggled to strip html tags from the show descriptions.
+      Line 220 from the CLI.rb file
+    -Option 2?
+
+  -Discuss 3 things you learned in the process of working on this project.
+    -How to use github collaboratively!
+    -How to divide and conquer, (assign tasks for features and pair programming for backbone of program)
+    -How to keep goals in sight (not getting carried away with features before getting core code done)
+
+  -Address, if anything, what you would change or add to what you have today?
+    -Additional features we'd like to add are listed on our README and listed as UNDER CONSTRUCTION in our program
+    -More refactoring? Some methods are huge
+
+  -Present any code you would like to highlight.
+    -USER_INPUT_THESAURUS.RB!!!!!!
+    OR
+    -our insane 100-line method (print_list_of_favorites)
+      NO
