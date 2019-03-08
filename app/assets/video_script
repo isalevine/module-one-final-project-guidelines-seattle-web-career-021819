@@ -1,0 +1,191 @@
+
+  Video Script (2 min max)
+
+  Welcome to the Show Randomizer!
+  This is a ruby-based command line interface program
+  that uses the EpisoDate API to query a database
+  of tv shows. It'll let you favorite tv shows and generate
+  a playlist of random episodes so you'll never have to
+  worry about what to watch again!
+
+
+        * The main functionality is to 
+        find TV shows by title,
+        add them to your list of favorites,
+        and create playlists of randomly-selected episodes.
+
+        * Additionally, users who want to keep their list of favorites
+        can reload and customize their User Profile, check out their
+        viewing statistics, and enable/disable certain shows from
+        being added to playlists.
+
+        * This video, we'll demonstrate the search and playlist generator,
+        and give a quick overview of what users can do in their User Profile.
+
+
+        *[Welcome Page]
+        ---------------
+        * On the welcome page, enter your user name.
+        Or press enter to see a list of all users in the system.
+        We'll use my username for this demo.
+
+        ...
+
+        * Here's the main menu.
+        The program's main functionality is listed
+        at the top of the menu options.
+        We'll start by searching for two shows,
+        adding them to our Favorites list,
+        and creating a playlist from them.
+
+        ...
+
+        * Let's search for King of the Hill by entering 'king of'.
+        Individual shows are selected by their unique ID number.
+        Once the show's information loads, you can add to favorites,
+        or search for another show.
+
+        * Let's search for The Simpsons. Since there is only one result,
+        the show information automatically loads.
+        We'll add it to our Favorites.
+
+        * One more--Futurama.
+
+        * Press enter to go back to the main menu.
+
+        ...
+
+        * Let's see our list of Favorites. Here, you can remove a show
+        by entering its ID number. Let's remove The Simpsons.
+
+        * Press enter to go back to the main menu.
+
+        ...
+
+        * Now let's create a playlist! Enter the number of episodes
+        you want on the playlist.
+        The program will randomly select episodes from all the shows
+        on your Favorites list!
+
+        * Enjoy watching!
+
+
+
+
+
+
+
+Video Script (2 min max)
+
+Welcome to the Show Randomizer!
+This is a ruby-based command line interface program
+that uses the EpisoDate API to query a database
+of tv shows. It'll let you favorite tv shows and generate
+a playlist of random episodes so you'll never have to
+worry about what to watch again!
+
+
+[Welcome Page]
+--------------
+You can see here on the welcome page that we have the option
+to enter a username, or to see a list of all users.
+We'll take a list of all current users first by hitting enter.
+(PRESS ENTER)
+As you can see, we already have a few users in our system.
+We'll hit enter again to get back to the previous page...
+(PRESS ENTER)
+...and we'll use my username for this demo.
+(TYPE 'yutaro', HIT ENTER)
+[USER PAGE]
+-----------
+Here we have quite a few options to pick from, so we'll start
+with option 1 and search for a show
+(TYPE '1' AND PAUSE)
+Take note that we can enter either the number for the option
+or the word associated with that option. In this case, we can
+use 'search', 'show', even 's', 'se', 'find', 'title',
+They'll all work.
+(HIT ENTER)
+Now we can search for a tv show by its title and I like Brooklyn
+Nine-Nine, so I'm going to look for brooklyn.
+(TYPE 'brooklyn' AND HIT ENTER)
+You'll see we get a total of 14 search results in alphabetical order
+Now the one I'm looking for is going to be id - 34496, so I'll enter
+that and hit enter
+(TYPE '34496' AND HIT ENTER)
+Just a note, if there were only 1 result from the search, it'll
+jump directly to the show detail screen like the one shown here.
+Here you can see all the details for the tv show such as the title,
+genre, air date, network, number of season, and description.
+From here, we have the option to 'Add to Favorites', 'View list of seasons/episodes', 'search for another title', 'go back to the main menu', or quit the program. I'm going to add this show to my favorites and this time I'll use 'fave'...
+(TYPE 'fave' AND HIT ENTER)
+We see we get confirmation at the top that the show was added.
+We can try adding it again and it'll let us know that it's
+already in our favorites.
+(TYPE 1 AND HIT ENTER)
+We'll go back to the main menu and see what our current list of
+favorites looks like.
+You can see Brooklyn Nine-Nine is included along with a few other
+shows that I had already favorited. From here, I can also delete
+shows from my favorites by entering their show ID.
+Let's say I don't want Bob's Burgers from my favorites anymore,
+so I'll type in '23568', hit enter, and you can see it's removed
+with a notification at the top confirming that it was removed.
+You'll notice, there are 'Add to playlist' indications to the right
+of each show, and this is to specify whether or not you want to
+include the show when generating the list of random episodes.
+Newly added tv shows will be set to ON by default and these can be
+toggled on and off from the user profile.
+We'll take a look at that now, so we'll go back to the main menu,
+and jump into the user profile.
+[USER PROFILE]
+Here you'll see some stats on the user such as the username, real name, profile created and updated dates as well as some interesting
+ones, like number of favorite shows, total episodes, total runtime, and average episodes per show. There are additional ones listed as
+'UNDER CONSTRUCTION' that will be for future iterations of this project
+You can see we have the option to remove shows from the favorites
+list as demonstrated previously, as well as changing the username,
+or the real name.
+We'll go into the first option to toggle the playlist option on and off
+(GO INTO OPTION 1)
+So let's say I want to keep The League in my favorites list, but
+don't want it included in my generated playlist. I can enter '23136' and it'll show that 'add to playlists' is now OFF.
+Now we'll go back to the profile menu and back out to the main menu
+Now we can generate a playlist so we don't have to waste time
+trying to decide what show or what episode to watch!
+We'll go into option 3 and it'll prompt us how many episodes
+we'd like in the playlist. Let's say we want 15 episodes..
+(ENTER 15)
+You can see we get a list of episodes with the show name, season number, episode number and episode title, AS WELL AS an estimated
+runtime as the bottom
+Also note that the playlist doesn't include any episodes from
+The League since we toggled that option OFF.
+NOW we'll go back to the main menu and take a look at some of
+the program stats. Here we have general stats such as the number
+of users and playlists, average number of playlists, average number
+of episodes per playlist, total number of favorites by all users,
+and the total number of unique shows favorited by all users.
+(HIT ENTER)
+AND that's it! Hope you all find this tool useful in finding your
+next tv show.
+(HIT 0 AND ENTER)
+Thank you!
+## =========================================================== ##
+Presentation (3 min max)
+-Your Presentation Should:
+  -Describe something you struggled to build, and show us how you ultimately implemented it in your code.
+  -Discuss 3 things you learned in the process of working on this project.
+    -How to use github collaboratively!
+    -How to divide and conquer, (assign tasks for features and pair programming for backbone of program)
+    -How to keep goals in sight (not getting carried away with features before getting core code done)
+  -Address, if anything, what you would change or add to what you have today?
+    -Additional features we'd like to add are listed on our README and listed as UNDER CONSTRUCTION in our program
+  -Present any code you would like to highlight.
+    -USER_INPUT_THESAURUS.RB!!!!!!
+Collapse
+
+
+
+Message Input
+
+
+Message Yutaro Tsuji

@@ -178,7 +178,9 @@ Please select an option below:
     puts "Please enter the id number for the show you are looking for:"
     user_input = STDIN.gets.chomp
     formatted_list.each do |string|
-      if string.include?(user_input)
+      if user_input.strip == ""
+        self.main_menu
+      elsif string.include?(user_input)
         url = API_URL + "show-details?q=" + user_input.to_s
         show_hash = get_json(url)["tvShow"] #=> hash of ONLY THE SPECIFIC show's details
         @menu_message = nil
