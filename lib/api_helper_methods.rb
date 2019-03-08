@@ -80,6 +80,7 @@ def print_list_of_favorites(user, menu)
     end
     if user_input.strip == ""
       @menu_message = nil
+      puts "Profile loading, please wait..."
       user_profile_menu(user)
     elsif selection.count == 1
       delete_show_from_favorites(user_input, user, menu)
@@ -242,7 +243,7 @@ def print_new_playlist(episode_array, total_runtime)
   puts "-----------------"
   puts episode_array
   puts
-  puts "Estimated runtime: #{total_runtime}"
+  puts "Estimated runtime: #{total_runtime} minutes"
   puts
   puts "Press enter to return to the main menu"
   STDIN.gets.chomp
@@ -277,7 +278,7 @@ def view_program_statistics
   num_episodes = Playlist.count
   num_favorites = Favorite.count
   num_shows = Favorite.group(:show_id).count.keys.count
-
+  system('clear')
   puts "
   Show Randomizer - Program Statistics
   ============================================================
