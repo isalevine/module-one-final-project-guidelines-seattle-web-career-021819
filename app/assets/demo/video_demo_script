@@ -1,0 +1,70 @@
+
+
+  Welcome to the Show Randomizer!
+  This is a Ruby-based command line interface program
+  that uses the EpisoDate.com API to query a database
+  of tv shows.
+
+
+        * The program's main functionality is to
+        find TV shows by title,
+        add them to your list of favorites,
+        and use them to create playlists
+        of randomly-selected episodes.
+
+        * Additionally, users who want to keep their list of favorites
+        can reload and customize their User Profile, including
+        enabling or disabling certain shows from
+        being added to playlists.
+
+        * In this video, we'll give a quick overview of the search function,
+        the Favorites list, and the playlist generator.
+
+        ...
+
+        * On the welcome page, enter your user name.
+        Or, you can press enter to see a list of all user names in the system.
+        We'll make a new username for me to use in this demo.
+
+        ...
+
+        * Here's the main menu.
+        The program's main functions are listed at the top of the menu.
+        We'll start by searching for a few shows,
+        adding them to our Favorites list,
+        and creating a playlist from them.
+
+        ...
+
+        * Let's search for Avatar: The Last Airbender by entering 'avatar'.
+        Individual shows are selected by their unique ID number.
+        Once the show's information loads, you can add to favorites,
+        or search for another show.
+
+        * Let's search for The Simpsons. Since there is only one result,
+        the show information automatically loads.
+        We'll add it to our Favorites.
+
+        * Let's do one more--how about Futurama.
+
+        * Now, press enter to go back to the main menu.
+
+        ...
+
+        * Let's see our list of Favorites. Here, you can remove a show
+        by entering its ID number. Let's remove The Simpsons.
+
+        * Now, press enter to go back to the main menu again.
+
+        ...
+
+        * Now let's create a playlist! When you select this option,
+        it may take a few seconds to load all the episodes.
+
+        In the playlist generator screen, enter the number of episodes
+        you want on the playlist.
+
+        The program will randomly select episodes from all the shows
+        on your Favorites list!
+
+        * You now have your playlist! Enjoy watching!
