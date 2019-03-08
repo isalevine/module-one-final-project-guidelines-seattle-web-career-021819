@@ -2,18 +2,29 @@ Presentation (3 min max)
 -Your Presentation Should:
   -Describe something you struggled to build, and show us how you ultimately implemented it in your code.
     -Option 1?
-      We struggled to strip html tags from the show descriptions.
-      Line 220 from the CLI.rb file
+      We struggled to strip html tags from the show descriptions - using correct syntax for special characters is tricky!
+      (~Line 220 from the CLI.rb file - see HORRIBLE chain of .gsub functions)
     -Option 2?
+      Organized CLI/helper/run files - wasn't sure how to break up 300+ lines of code initially written,
+      and debugging has involved a lot of searching through long files of 'def method' code, which are
+      only loosely organized
+    -Option 3?
+      Making flexible and intuitive menus - we ended up making more menus than anticipated, and coding them to
+      behave as expected for EVERY choice (and have flexibility in user input via a "thesaurus" helper method)
+      required a lot of coding/refactoring/debugging, all of which grew exponentially with new menus.
 
   -Discuss 3 things you learned in the process of working on this project.
-    -How to use github collaboratively!
-    -How to divide and conquer, (assign tasks for features and pair programming for backbone of program)
+    -How to use github collaboratively! - specifically, using branches and resolving merge conflicts.
+    -How to divide and conquer, (assign tasks for features and pair programming for backbone of program) - specifically,
+      starting the project by pair programming all initial code so we both understood the structure inside and out,
+      which allowed us to work independently work on individual features later in the week.
     -How to keep goals in sight (not getting carried away with features before getting core code done)
 
   -Address, if anything, what you would change or add to what you have today?
     -Additional features we'd like to add are listed on our README and listed as UNDER CONSTRUCTION in our program
-    -More refactoring? Some methods are huge
+    -More refactoring? Some methods are huge! And simply navigating the CLI & api-helper-method files is very hard.
+    -Possible to export episode playlists to another program for expanded functionality?
+      (i.e. specify a local directory, and use exported playlist to scan and search for/load video files by their titles?)
 
   -Present any code you would like to highlight.
     -USER_INPUT_THESAURUS.RB!!!!!!
