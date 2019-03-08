@@ -1,5 +1,7 @@
 # Show Randomizer
 
+![menu](app/assets/show_randomizer_welcome_screen.png)
+
 The Show Randomizer is a Ruby-based CLI program that helps users browse a database of tv shows, keep track of their favorite ones, and generate a random list of 10 episodes from their favorite shows. Stop wasting time trying to decide what show or episode to watch and let the Show Randomizer decide for you!
 
 Data provided by [EpisoDate.com](https://www.episodate.com/)

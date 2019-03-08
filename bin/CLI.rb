@@ -120,6 +120,9 @@ Please select an option below:
       Ascii.goodbye_art
       puts "Thank you! Goodbye!"
       puts
+      puts
+      puts
+      puts
       exit
   end
 
@@ -233,6 +236,7 @@ What would you like to do?
     if user_input == "1" || @thesaurus.display_menu_1_words.include?(user_input.downcase)
       self.add_to_favorites(show_hash)
     elsif user_input == "2" || @thesaurus.display_menu_2_words.include?(user_input.downcase)
+      @menu_message = nil
       display_seasons(show_hash)
     elsif user_input == "3" || @thesaurus.display_menu_3_words.include?(user_input.downcase)
       self.search_shows_by_title

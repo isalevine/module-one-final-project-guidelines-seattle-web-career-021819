@@ -27,8 +27,11 @@ class Ascii
    def self.goodbye_art
      puts <<-'EOF'
 
+
+
      (∗ ･‿･)ﾉ
-     
+
+
      EOF
    end
 
